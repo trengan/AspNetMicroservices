@@ -15,17 +15,17 @@ services:
     image: ${DOCKER_REGISTRY-}catalogapi
     build:
       context: .
-      dockerfile: Catalog.API/Dockerfile
+      dockerfile: Services/Catalog/Catalog.API/Dockerfile
   basket.api:
     image: ${DOCKER_REGISTRY-}basketapi
     build:
       context: .
-      dockerfile: Basket/Basket.API/Dockerfile
+      dockerfile: Services/Basket/Basket.API/Dockerfile
   discount.api:
     image: ${DOCKER_REGISTRY-}discountapi
     build:
       context: .
-      dockerfile: Discount/Discount.API/Dockerfile
+      dockerfile: Services/Discount/Discount.API/Dockerfile
 
   discount.grpc:
     image: ${DOCKER_REGISTRY-}discountgrpc
@@ -33,10 +33,13 @@ services:
       context: .
       dockerfile: Services/Discount/Discount.Grpc/Dockerfile
 
+
+
 volumes:
   mongo_data:
   portainer_data:
   postgres_data:
   pgadmin_data:
+
 
 
